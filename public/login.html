@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginstyles.css">
+    <title>Login</title>
+</head>
+<body>
+
+<div class="center-box">
+    <div class="login-form">
+        <h1 class="bold-text">Login</h1>
+
+        <form onsubmit="submitLoginForm(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    
+                    <input type="text" id="contact" placeholder="Mail ID" required>
+                </div>
+
+                <div class="form-group">
+                    
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="login-script.js"></script>
+</body>
+</html>

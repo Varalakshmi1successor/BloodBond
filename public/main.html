@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Search</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Blood Donor Search</h1>
+        <form id="searchForm">
+            <label for="bloodType">Blood Type:</label>
+            <input type="text" id="bloodType" name="bloodType">
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district">
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state">
+
+            <button type="button" onclick="searchUsers()">Search</button>
+        </form>
+
+        <div id="searchResults"></div>
+    </div>
+
+    <script src="main-script.js"></script>
+</body>
+
+</html>

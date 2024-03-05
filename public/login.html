@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loginstyles.css">
+    <link rel="stylesheet" href="login.css">
     <title>Login</title>
 </head>
 <body>
+    <div class="banner">
+        <video autoplay loop muted playsinline>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+        <div class="navbar">
+            <img class="logo" src="logo.png" alt="Logo">
+            <div class="logo-text">𝐁𝐋𝐎𝐎𝐃𝐁𝐎𝐍𝐃</div>
+            <ul>
+                <li><a href="index.html">𝐇𝐎𝐌𝐄</a></li>
+                <li><a href="aboutus.html">𝐀𝐁𝐎𝐔𝐓 𝐔𝐒</a></li>
+                <li><a href="contact.html">𝐂𝐎𝐍𝐓𝐀𝐂𝐓</a></li>
+                <li><a href="login.html">𝐋𝐎𝐆𝚰𝐍</a></li>
+            </ul>
+        </div>
+        <div class="login-box">
+            <form onsubmit="submitLoginForm(event)" title="Login Form">
+                <label for="contact">Mail ID</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter your email" required>
 
-<div class="center-box">
-    <div class="login-form">
-        <h1 class="bold-text">Login</h1>
+                <label for="password">𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <p><a href="forgot_password.html">Forgot Password?</a></p>
 
-        <form onsubmit="submitLoginForm(event)">
-            <div class="form-row">
-                <div class="form-group">
-                    
-                    <input type="text" id="contact" placeholder="Mail ID" required>
-                </div>
-
-                <div class="form-group">
-                    
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-            </div>
-
-            <button type="submit">Login</button>
-        </form>
+                <button type="submit">𝐋ⱺ𝗀𝗂𐓣</button>
+            </form>
+            <p>If you are not registered, <a href="donor.html">register here</a>.</p>
+        </div>
     </div>
-</div>
-
-<script src="login-script.js"></script>
+    <script src="login-script.js"></script>
 </body>
 </html>

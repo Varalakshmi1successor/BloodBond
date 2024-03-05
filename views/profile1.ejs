@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/public/profile.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #navigation {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #navigation a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #navigation a:hover {
+            color: #ffcc00;
+        }
+
+        #welcomeMessage {
+            text-align: center;
+            margin: 20px;
+            font-size: 24px;
+            color: #333;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        #welcomeMessage p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>User Profile</h1>
+    </div>
+
+    <div id="navigation">
+        <a href="/profile">Home</a>
+        <a href="/profile1">Profile</a>
+        <a href="/donor">Update Details</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div id="welcomeMessage">
+        
+        <p><strong>Name:</strong> <%- username %></p>
+        <p><strong>Blood Group:</strong> <%- bloodGroup %></p>
+        <p><strong>Email:</strong> <%- email %></p>
+        <p><strong>Phone:</strong> <%- phone %></p>
+        <p><strong>Age:</strong> <%- age %></p>
+        <p><strong>Address:</strong> <%- address %></p>
+        <p><strong>District:</strong> <%- district %></p>
+        <p><strong>State:</strong> <%- state %></p>
+        <p><strong>Country:</strong> <%- country %></p>
+        <p><strong>Pincode:</strong> <%- pincode %></p>
+    </div>
+    
+    <script>
+        
+        const username = '<%- username %>';
+        const bloodGroup = '<%- bloodGroup %>';
+        const email = '<%- email %>';
+        const phone = '<%- phone %>';
+        const age = '<%- age %>';
+        const address = '<%- address %>';
+        const district = '<%- district %>';
+        const state = '<%- state %>';
+        const country = '<%- country %>';
+        const pincode = '<%- pincode %>';
+    
+        if (!username) {
+            
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>

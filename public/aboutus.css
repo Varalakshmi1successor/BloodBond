@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  
+  .banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40));
+    background-position: center;
+    background-size: center;
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .navbar {
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 50px;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+  
+  /* ... existing code ... */
+  .logo-text {
+    font-size: 24px;
+    font-weight:bolder;
+    margin-left: 0px;
+    margin-right: 520px;
+    color: white;
+  }
+  /* ... existing code ... */
+  
+  
+  .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+  }
+  .navbar ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+  }
+  li a:hover{
+    background: white;
+    transition: 0.6s;
+  }
+  .navbar a:hover{
+    color: black;
+  }
+  .content{
+    width: 100%;
+    position: absolute;
+    color: white;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .content h1{
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  button{
+    width: 400px;
+    padding: 35px;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius: 25px;
+    color: black;
+    border: 2px;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover{
+    background: rgb(27, 29, 30);
+    transition: 0.5s;
+  }
+  button:hover{
+    color: white;
+  }
+  .banner video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  @media(min-aspect-ratio: 16/9){
+    .banner video{
+        width: 100%;
+        height: auto;
+    }
+  }
+  .contact-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px; /* Adjusted padding for a smaller transparent box */
+    border-radius: 15px;
+    width: 80%; /* Adjusted width for a smaller transparent box */
+    margin: auto;
+    margin-top: 40px; /* Adjusted margin-top for better positioning */
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Added box shadow for depth */
+  }
+  
+  .contact-box h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #131212; /* Changed text color for better visibility */
+  }
+  
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .contact-form label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 15px; /* Adjust the font size as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+  }
+  
+  /* ... existing code ... */
+  
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(241, 225, 225, 0.7);
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgb(246, 246, 246);
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    grid-column: span 2;
+  }
+  
+  .contact-form button {
+    background-color: #eceaea;
+    color: #000000;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  .contact-form button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .contact-form button:active {
+    background-color: #ff0000; /* Change color to red on button click */
+  }
+  
+  @media (max-width: 768px) {
+    .contact-box {
+        width: 80%;
+    }
+  
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+  }
+  .image-container {
+    position: absolute;
+    top: 25%;
+    left: 23%;
+    bottom: 24%;
+    width: 23%; /* Adjust the width of the image container */
+    background: url('about.jpg') no-repeat center center;
+    background-size: contain;
+    border-top-right-radius: 15px; /* Matching border radius to the contact-box */
+    border-bottom-right-radius: 15px;
+    z-index: 2;
+  }
+  /* ... existing code ... */
+  
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 400px;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .login-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-box label {
+    margin: 10px 0;
+    text-align: left; 
+    font-size: 20px;/* Align the labels to the left */
+  }
+  
+  .login-box input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    background: rgba(169, 169, 169, 0.3); /* Grey transparent background */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 19px; /* Text color */
+  }
+  
+  .login-box button {
+    padding: 3px;
+    background: rgb(238, 234, 234);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 150px;
+    margin-left: 105px; /* Adjust the margin-left to move the button to the right */
+  }
+  
+  .login-box button:hover {
+    background: rgb(236, 4, 4);
+    color: black;
+    transition: 0.5s;
+  }
+  
+  
+  
+  .login-box p {
+    margin-top: 15px;
+  }
+
+
+.black-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 60%; /* Adjust the width of the box as needed */
+  height: 500px; /* Increase the height of the box as needed */
+  border-radius: 15px;
+  z-index: 1; /* Ensure it's above the video background */
+}
+
+.about-content {
+  position: absolute;
+  top: 55%;
+  left: 65%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2; 
+}
+
+.about-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 37px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  z-index: 2;
+  width: 81%;
+}
+
+/* ... Existing CSS ... */
+
+/* ... Existing CSS ... */
+
+.about-content button {
+  background-color: #eceaea;
+  color: #000000;
+  padding: 10px; /* Adjust the padding to decrease button size */
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 60%;
+  z-index: 2; /* Match the z-index of h2 for button placement */
+  position: relative;
+  top: -30px; /* Adjust the top position to move the button above */
+  left: -50px; /* Adjust the left position to move the button to the left */
+}
+
+/* ... Existing CSS ... */
+
+
+.about-content button:hover {
+  background-color: #e0e0e0;
+}
+
+.about-content button:active {
+  background-color: #ff0000;
+}
+
+#more {
+  display: none; /* Hide the additional content initially */
+}
+
+/* ... Existing CSS ... */
+
+
+
+

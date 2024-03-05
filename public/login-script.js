@@ -4,27 +4,25 @@ function submitLoginForm(event) {
     const email = document.getElementById('contact').value;
     const password = document.getElementById('password').value;
 
-    // Make the fetch request
     fetch('/user/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            email: email,
+            contact: email,
             password: password,
         }),
     })
     .then(response => response.json())
     .then(data => {
-        // Handle the response data as needed
+        console.log('Response data:', data);
+
         if (data.message === "Login successful!") {
-            // Successful login
-            alert("Login successful!");
-            // Redirect to another page or perform other actions as needed
-            window.location.href = '/main';
+            console.log('Redirecting to /profile');
+            sessionStorage.setItem('user', JSON.stringify(data.user));
+            window.location.href = '/profile';
         } else {
-            // Failed login
             alert("Incorrect email or password. Please try again.");
         }
     })

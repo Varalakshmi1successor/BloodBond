@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/public/profile.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #navigation {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #navigation a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+        }
+
+        #welcomeMessage {
+            text-align: center;
+            margin: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        #bloodDonationInfo {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>User Profile</h1>
+    </div>
+
+    <div id="navigation">
+        <a href="/profile">Home</a>
+        <a href="/profile1">Profile</a>
+        <a href="/donor">Update Details</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div id="welcomeMessage">
+        <!-- The user's name will be dynamically inserted here -->
+    </div>
+
+    <div id="bloodDonationInfo">
+        <h2>Blood Donation Information</h2>
+        <p>Requests Received: <span id="requestsReceived"><!-- Placeholder for requests received --></span></p>
+        <p>Requests Accepted: <span id="requestsAccepted"><!-- Placeholder for requests accepted --></span></p>
+
+        <p>Proverbs related to blood donation:</p>
+        <ul>
+            <li>"Give the gift of life, donate blood."</li>
+            <li>"Your blood can save lives, be a hero."</li>
+        </ul>
+    </div>
+
+    <script>
+        const username = '<%= username %>';
+
+
+        if (username) {
+            
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+            welcomeMessageElement.textContent = `Welcome, ${username}!`;
+        } else {
+            
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>

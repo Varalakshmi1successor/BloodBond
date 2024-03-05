@@ -53,21 +53,6 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    bloodGroup: {
-        type: String,
-        required: true,
-        index: true  
-    },
-    district: {
-        type: String,
-        required: true,
-        index: true  
-    },
-    state: {
-        type: String,
-        required: true,
-        index: true  
-    },
 });
 
 const User = mongoose.model('User', UserSchema);

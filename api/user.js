@@ -1,10 +1,11 @@
 import express from "express";
 import bcrypt from "bcrypt";
-
-const router = express.Router();
 import User from './../models/user.js';
+const router = express.Router();
+
 
 router.post("/recipient", async (req, res) => {
+    // Your recipient route logic here
 });
 
 router.post("/donor", async (req, res) => {
@@ -38,7 +39,7 @@ router.post("/donor", async (req, res) => {
     }
 
     if (age < 18) {
-        return res.status(400).json({ error: "We appreciate your responsibility, but you must be at least 18 years old to register." });
+        return res.status(400).json({ error: "You must be at least 18 years old to register." });
     }
 
     // Hash the password
@@ -47,10 +48,10 @@ router.post("/donor", async (req, res) => {
 
     // Save the user with the hashed password
     const newUser = new User({ name, email, phone, password: hashedPassword, age, bloodGroup, address, district, state, country, pincode });
-    
+
     try {
         await newUser.save();
-        res.status(200).json({ message: `Registration successful! Name: ${name}, Email: ${email}, Phone: ${phone}, Age: ${age}` });
+        res.status(200).json({ message: `Registration successful!` });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: "An error occurred while saving the user to the database." });
@@ -62,26 +63,42 @@ router.post("/login", async (req, res) => {
     const { contact, password } = req.body;
 
     try {
-        // Check if a user with the provided email exists
-        const existingUser = await User.findOne({ contact });
+        const existingUser = await User.findOne({ $or: [{ email: contact }, { phone: contact }] });
 
         if (existingUser) {
-            // Compare the provided password with the hashed password in the database
             const passwordMatch = await bcrypt.compare(password, existingUser.password);
 
             if (passwordMatch) {
-                return res.status(200).json({ message: "Login successful!" });
+                req.session.user = {
+                    name: existingUser.name,
+                    email: existingUser.email,
+                    phone: existingUser.phone,
+                    age: existingUser.age,
+                    bloodGroup: existingUser.bloodGroup,
+                    address: existingUser.address,
+                    district: existingUser.district,
+                    state: existingUser.state,
+                    country: existingUser.country,
+                    pincode: existingUser.pincode,
+                    // Add other user properties as needed
+                };
+
+                return res.status(200).json({
+                    message: "Login successful!",
+                    user: req.session.user,
+                });
             } else {
                 return res.status(401).json({ error: "Incorrect password. Please try again." });
             }
         } else {
-            return res.status(401).json({ error: "No user found with the provided email. Please check your email or register." });
+            return res.status(401).json({ error: "No user found with the provided email or phone. Please check your email or register." });
         }
     } catch (err) {
         console.error(err);
         return res.status(500).json({ error: "An error occurred while checking the database." });
     }
 });
+
 router.post("/search", async (req, res) => {
     const { bloodGroup, district, state } = req.body;
 
@@ -96,6 +113,93 @@ router.post("/search", async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "An error occurred while searching the database." });
+    }
+});
+
+router.post("/reset-password", async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ error: "No user found with the provided email." });
+        }
+
+        // Generate a unique token
+        const token = crypto.randomBytes(20).toString('hex');
+
+        // Store the token in the user document
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // Token expires in 1 hour
+
+        await user.save();
+
+        // Send an email with the reset link
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'your_email@gmail.com',
+                pass: 'your_email_password'
+            }
+        });
+
+        const resetLink = `http://yourdomain.com/reset-password/${token}`;
+        const mailOptions = {
+            from: 'your_email@gmail.com',
+            to: email,
+            subject: 'Password Reset - BLOODBOND',
+            text: `To reset your password, click the following link: ${resetLink}`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).json({ error: "An error occurred while sending the reset email." });
+            } else {
+                console.log('Email sent: ' + info.response);
+                return res.status(200).json({ message: "Password reset instructions sent to your email." });
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "An error occurred while processing the password reset request." });
+    }
+});
+
+router.post('/update-password/:token', async (req, res) => {
+    const { token } = req.params;
+    const { newPassword, confirmPassword } = req.body;
+
+    try {
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpires: { $gt: Date.now() },
+        });
+
+        if (!user) {
+            return res.status(400).json({ error: 'Invalid or expired reset token.' });
+        }
+
+        if (newPassword !== confirmPassword) {
+            return res.status(400).json({ error: 'Passwords do not match.' });
+        }
+
+        // Hash the new password
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+
+        // Update the user's password and clear the reset token fields
+        user.password = hashedPassword;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+
+        await user.save();
+
+        return res.status(200).json({ success: true });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'An error occurred while updating the password.' });
     }
 });
 

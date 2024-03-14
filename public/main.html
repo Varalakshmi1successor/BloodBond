@@ -4,24 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Donor Search</title>
+    <title>𝗕𝗹𝗼𝗼𝗱 𝗗𝗼𝗻𝗼𝗿 𝗦𝗲𝗮𝗿𝗰𝗵</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body class="banner">
+    <div class="navbar">
+        <img class="logo" src="logo.png">
+        <div class="logo-text">𝐁𝐋𝐎𝐎𝐃𝐁𝐎𝐍𝐃</div>
+        <ul>
+            <li><a href="index.html">𝐇𝐎𝐌𝐄</a></li>
+            <li><a href="aboutus.html">𝐀𝐁𝐎𝐔𝐓 𝐔𝐒</a></li>
+            <li><a href="contact.html">𝐂𝐎𝐍𝐓𝐀𝐂𝐓</a></li>
+            <li><a href="login.html">𝐋𝐎𝐆𝚰𝐍</a></li>
+        </ul>
+    </div>
     <div class="container">
         <h1>Blood Donor Search</h1>
         <form id="searchForm">
-            <label for="bloodType">Blood Type:</label>
+            <label for="bloodType">𝐁𝐥𝐨𝐨𝐝 𝐓𝐲𝐩𝐞:</label>
             <input type="text" id="bloodType" name="bloodType">
 
-            <label for="district">District:</label>
+            <label for="district">𝐃𝐢𝐬𝐭𝐫𝐢𝐜𝐭:</label>
             <input type="text" id="district" name="district">
 
-            <label for="state">State:</label>
+            <label for="state">𝐒𝐭𝐚𝐭𝐞:</label>
             <input type="text" id="state" name="state">
 
-            <button type="button" onclick="searchUsers()">Search</button>
+            <button type="button" onclick="searchUsers()">𝐒𝖊𝖆𝖗𝖈𝖍</button>
         </form>
 
         <div id="searchResults"></div>

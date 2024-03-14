@@ -3,78 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/public/profile.css">
     <style>
-        body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-        }
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .banner {
 
-        #header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
+    height: 100vh;
+    background-image: url('bg.jpg'); /* Replace 'your_image_path.jpg' with the actual path to your background image */
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed; 
+    filter: contrast(1.2);/* Use 'cover' to ensure the image covers the entire container */
+  }
+  
 
-        #navigation {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
+  .navbar{
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    width: 50px;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+  /* ... existing code ... */
+  .logo-text {
+    font-size: 24px;
+    font-weight:bolder;
+    margin-left: 0px;
+    margin-right: 520px;
+    color: rgb(8, 8, 8);
+  }
+  /* ... existing code ... */
+  
+  
+  .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+  }
+  .navbar ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+    padding: 15px;
+  }
+  li a:hover{
+    background: rgb(223, 69, 3);
+    transition: 0.6s;
+  }
+  .navbar a:hover{
+    color: rgb(10, 9, 9);
+  }
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    
+  
+  label,
+  input {
+      margin-bottom: 10px; /* Increase the margin between label and input */
+  }
+    
+    input {
+      padding: 8px;
+      margin-bottom: 16px;
+    }
+    
+   /* ... existing code ... */
+  
+  button {
+    background-color: #190303;
+    color: rgb(10, 10, 10);
+    padding: 8px; /* Increased padding for better appearance */
+    font-size: 19px; /* Increased font size for the search button */
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 150px; 
+    margin-left: 190px; 
+  }
+  
+  button:hover {
+    background-color: #ad1313;
+  }
+  
+  /* ... existing code ... */
+  
+    #searchResults {
+      margin-top: 20px;
+    }
 
-        #navigation a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 16px;
-        }
+    
+    .container {
+      max-width: 800px;
+      margin: 110px 0 20px 70px; /* Adjusted margin to move the box to the left */
+      
+      
+      
+     
+  }
+  
 
-        #welcomeMessage {
-            text-align: center;
-            margin: 20px;
-            font-size: 24px;
-            color: #333;
-        }
+/* ... existing CSS ... */
 
-        #bloodDonationInfo {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+.container h1 {
+    margin-bottom: 20px;
+    transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.container h1 {
+    color: rgb(19, 19, 18);
+}
+
+
+.container h1:hover {
+    color: rgb(14, 14, 14);
+    transform: scale(1.05);
+}
+
+/* ... existing CSS ... */
+
+.container p {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.container h2 {
+  color: rgb(247, 18, 18);
+}
+
+/* ... existing CSS ... */
+
+.blood-matching {
+  color: rgb(108, 4, 4);
+  font-size: 16px;
+    color: rgb(20, 20, 20);
+    padding: 50px 0;
+    margin: 110px 0 20px 80px;
+    font-size: 18px;
+}
+
+.blood-matching h2 {
+  color: rgb(108, 4, 4);
+    font-size: 32px;
+    margin-top: -130px;
+}
+
+.blood-matching h2 {
+  color: rgb(240, 59, 59);
+}
+.blood-matching h4 {
+  margin-top: 35px;
+      max-width: 800px;
+}
+
+.blood-matching img {
+  margin-top: 35px; 
+  margin-left: 100px;
+    width: 30%;
+    height: auto;
+    border-radius: 7px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blood-matching img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+/* ... existing CSS ... */
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+
+
+.red-box {
+  margin-top: -55px;
+  background-color: rgba(230, 227, 227, 0.5);
+  padding: 8px;
+  border-radius: 5px;
+  max-width: 780px;
+  margin: 10px auto;
+   /* Center the box horizontally */
+}
+
+.red-box h2 {
+  margin-top: 35px;
+  color: black; 
+  font-size: 24px; /* Increase the font size as needed */
+  margin-bottom: 50px;
+  margin-left: 35px;
+ 
+}
+
+.red-box p {
+  color: black; 
+  font-size: 18px;
+  
+  margin-bottom: 30px;
+}
+
+
+/* ... existing CSS ... */
+
+
+/* ... existing CSS ... */
+
+.pause-button {
+  margin-top: 35px;
+  background-color: #a11d1d;
+  color: rgb(205, 197, 197);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 650px; /* Adjust the left margin as needed */
+}
+
+.pause-button:hover {
+  background-color: #3c0101;
+}
     </style>
 </head>
-<body>
-    <div id="header">
-        <h1>User Profile</h1>
-    </div>
-
-    <div id="navigation">
-        <a href="/profile">Home</a>
-        <a href="/profile1">Profile</a>
-        <a href="/donor">Update Details</a>
-        <a href="/logout">Logout</a>
-    </div>
-
-    <div id="welcomeMessage">
-        <!-- The user's name will be dynamically inserted here -->
-    </div>
-
-    <div id="bloodDonationInfo">
-        <h2>Blood Donation Information</h2>
-        <p>Requests Received: <span id="requestsReceived"><!-- Placeholder for requests received --></span></p>
-        <p>Requests Accepted: <span id="requestsAccepted"><!-- Placeholder for requests accepted --></span></p>
-
-        <p>Proverbs related to blood donation:</p>
+<body class="banner">
+    <div class="overlay"></div>
+    <div class="navbar">
+        <img class="logo" src="logo.png">
+        <div class="logo-text">𝐁𝐋𝐎𝐎𝐃𝐁𝐎𝐍𝐃</div>
         <ul>
-            <li>"Give the gift of life, donate blood."</li>
-            <li>"Your blood can save lives, be a hero."</li>
+            <li><a href="/profile">𝐇𝐎𝐌𝐄</a></li>
+            <li><a href="/profile1">𝐏𝐑𝐎𝐅𝐈𝐋𝐄</a></li>
+            <li><a href="/donor">𝐔𝐏𝐃𝐀𝐓𝐄</a></li>
+            <li><a href="/logout">𝐋𝐎𝐆𝐎𝐔𝐓</a></li>
         </ul>
     </div>
+
+    <div class="container">
+        
+                        <h1>𝐈𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧𝐬 𝐭𝐨 𝐛𝐞 𝐟𝐨𝐥𝐥𝐨𝐰𝐞𝐝 𝐟𝐨𝐫 𝐛𝐥𝐨𝐨𝐝 𝐝𝐨𝐧𝐚𝐭𝐢𝐨𝐧...</h1>
+
+
+        <h2>𝐂𝐚𝐧...</h2>
+
+        <ul>
+            <h3><p>𝗟𝗲𝘁 𝗼𝘁𝗵𝗲𝗿𝘀 𝗯𝗲𝗻𝗲𝗳𝗶𝘁 𝗳𝗿𝗼𝗺 𝘆𝗼𝘂𝗿 𝗴𝗼𝗼𝗱 𝗵𝗲𝗮𝗹𝘁𝗵. 𝗗𝗼 𝗱𝗼𝗻𝗮𝘁𝗲 𝗯𝗹𝗼𝗼𝗱 𝗶𝗳 ...</p></h3>
+
+            <ul>
+                <h4><li>you are between the age group of 18-60 years.</li></h4>
+                <h4><li>your weight is 45 kgs or more.</li></h4>
+                <h4><li>your hemoglobin is 12.5 gm% minimum.</li></h4>
+                <h4><li>your last blood donation was 3 months earlier.</li></h4>
+                <h4><li>you are healthy and have not suffered from malaria, typhoid, or other transmissible diseases in the recent past.</li></h4>
+            </ul>
+        </ul>
+        <h2>𝐂𝐚𝐧'𝐭...</h2>
+        <ul>
+
+            <h3><p>𝗗𝗼 𝗻𝗼𝘁 𝗱𝗼𝗻𝗮𝘁𝗲 𝗯𝗹𝗼𝗼𝗱 𝗶𝗳 𝘆𝗼𝘂 𝗵𝗮𝘃𝗲 𝗮𝗻𝘆 𝗼𝗳 𝘁𝗵𝗲𝘀𝗲 𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝘀</p></h3>
+            
+
+            <ul>
+                <h4><li>cold/fever in the past 1 week.</li></h4>
+                <h4><li>under treatment with antibiotics or any other medication.</li></h4>
+                <h4><li>cardiac problems, hypertension, epilepsy, diabetes (on insulin therapy), history of cancer, chronic kidney or liver disease, bleeding tendencies, venereal disease, etc.</li></h4>
+                <h4><li>major surgery in the last 6 months.</li></h4>
+                <h4><li>vaccination in the last 24 hours.</li></h4>
+                <h4><li>had a miscarriage in the last 6 months or have been pregnant/lactating in the last one year.</li></h4>
+                <h4><li>have regularly received treatment with blood products.</li></h4>
+                <h4><li>shared a needle to inject drugs/have a history of drug addiction.</li></h4>
+                <h4><li>had sexual relations with different partners or with a high-risk individual.</li></h4>
+                <h4><li>been tested positive for antibodies to HIV.</li></h4>
+            </ul>
+
+        </ul>
+
+
+
+        <h2>  </h2>
+        <ul>
+
+            <h3><p>𝗣𝗿𝗲𝗴𝗻𝗮𝗻𝗰𝘆 𝗔𝗻𝗱 𝗠𝗲𝗻𝘀𝘁𝗿𝘂𝗮𝗹 𝗖𝘆𝗰𝗹𝗲</p></h3>
+
+            <ul>
+                <h4><li>Females should not donate blood during pregnancy.</li></h4>
+                <h4><li>They can donate after 6 months following a normal delivery and when they are not breastfeeding.</li></h4>
+                <h4><li>Females should not donate blood if they are having heavy menstrual flow or menstrual cramps.</li></h4>
+
+            </ul>
+
+        </ul>    
+    </div>
+
+    <div class="blood-matching">
+        <h2>𝐁𝐥𝐨𝐨𝐝 𝐓𝐲𝐩𝐞 𝐌𝐚𝐭𝐜𝐡𝐢𝐧𝐠</h2>
+
+           <ul>
+
+              <h4><p>Blood safety and matching are paramount in transfusion medicine to prevent adverse reactions and ensure the well-being of recipients. The ABO blood typing system classifies blood into four types (A, B, AB, O), considering the presence or absence of A and B antigens, along with the Rh factor. Crossmatching, a crucial step before transfusion, involves checking compatibility by mixing donor and recipient blood components.</p></h4>
+            
+            </ul>
+
+            <img src="compatible.jpg" alt="Blood Type Matching Image">
+            
+        <div class="red-box">
+            <h2><p> 𝐁𝐞𝐟𝐨𝐫𝐞 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐢𝐧𝐠, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐞𝐧𝐬𝐮𝐫𝐞 𝐲𝐨𝐮 𝐦𝐞𝐞𝐭 𝐨𝐮𝐫 𝐡𝐞𝐚𝐥𝐭𝐡 𝐜𝐫𝐢𝐭𝐞𝐫𝐢𝐚 𝐟𝐨𝐫 𝐛𝐥𝐨𝐨𝐝 𝐝𝐨𝐧𝐚𝐭𝐢𝐨𝐧, 𝐨𝐮𝐭𝐥𝐢𝐧𝐞𝐝 𝐢𝐧 𝐭𝐡𝐞 𝐢𝐧𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐨𝐧𝐬. 𝐄𝐥𝐢𝐠𝐢𝐛𝐥𝐞 𝐝𝐨𝐧𝐨𝐫𝐬 𝐜𝐚𝐧 𝐩𝐫𝐨𝐜𝐞𝐞𝐝 𝐰𝐢𝐭𝐡 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧, 𝐰𝐡𝐢𝐥𝐞 𝐭𝐡𝐨𝐬𝐞 𝐰𝐡𝐨 𝐡𝐚𝐯𝐞 𝐚𝐥𝐫𝐞𝐚𝐝𝐲 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝 𝐛𝐮𝐭 𝐧𝐨 𝐥𝐨𝐧𝐠𝐞𝐫 𝐦𝐞𝐞𝐭 𝐭𝐡𝐞 𝐜𝐫𝐢𝐭𝐞𝐫𝐢𝐚 𝐜𝐚𝐧 𝐮𝐭𝐢𝐥𝐢𝐳𝐞 𝐭𝐡𝐞 '𝐏𝐚𝐮𝐬𝐞' 𝐛𝐮𝐭𝐭𝐨𝐧 𝐭𝐨 𝐭𝐞𝐦𝐩𝐨𝐫𝐚𝐫𝐢𝐥𝐲 𝐡𝐚𝐥𝐭 𝐭𝐡𝐞𝐢𝐫 𝐩𝐚𝐫𝐭𝐢𝐜𝐢𝐩𝐚𝐭𝐢𝐨𝐧." 𝐢𝐧𝐜𝐥𝐮𝐝𝐞 𝐭𝐡𝐢𝐬 𝐬𝐞𝐧𝐭𝐞𝐧𝐜𝐞 𝐢𝐧 𝐭𝐡𝐞 𝐜𝐨𝐝𝐞 𝐛𝐞𝐥𝐨𝐰 𝐭𝐡𝐞 𝐛𝐥𝐨𝐨𝐝 𝐭𝐲𝐩𝐞 𝐦𝐚𝐭𝐜𝐡𝐢𝐧𝐠 𝐝𝐢𝐚𝐠𝐫𝐚𝐦</p></h2>
+        </div>
+    
+        <button class="pause-button">𝐏𝖆𝖚𝖘𝖊 𝐑𝖊𝖌𝖎𝖘𝖙𝖗𝖆𝖙𝖎𝖔𝖓</button>
+    </div>
+
 
     <script>
         const username = '<%= username %>';

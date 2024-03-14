@@ -1,45 +1,151 @@
-body {
-  font-family: Arial, sans-serif;
+*{
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url(''); /* Replace 'your_image_path.jpg' with the actual path to your background image */
+  background-position: center;
+  background-size: cover; /* Use 'cover' to ensure the image covers the entire container */
+}
 .container {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #040404;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgb(230, 227, 227);
+  background-color: rgba(105, 98, 98, 0.6); /* Set a lighter black background with transparency (adjust the alpha value) */
+  text-align: left; /* Align text to the right */
 }
 
-form {
+.container h1 {
+  text-align: right;
+  margin-right: 110px;
+  margin-bottom: 10px; /* Adjust margin-bottom to move the title above */
+}
+
+/* ... existing code ... */
+/* Align the h1 element to the left within the container */
+s
+
+form label {
+  font-size: 18px; /* Increase the font size for all labels within the form */
+}
+
+form input {
+  font-size: 16px; /* Increase the font size for all input elements within the form */
+}
+/* The rest of your existing styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* ... existing code ... */
+
+
+.navbar{
+  width: 90%;
+  padding: 30px;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-
-label {
-  margin-bottom: 8px;
+.logo{
+  width: 50px;
+  margin-top: -10px;
+  cursor: pointer;
 }
+/* ... existing code ... */
+.logo-text {
+  font-size: 24px;
+  font-weight:bolder;
+  margin-left: 0px;
+  margin-right: 520px;
+  color: black;
+}
+/* ... existing code ... */
 
+
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 20px;
+}
+.navbar ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(13, 12, 12);
+  font-weight: 600;
+  padding: 15px;
+}
+li a:hover{
+  background: rgb(4, 4, 4);
+  transition: 0.6s;
+}
+.navbar a:hover{
+  color: rgb(233, 230, 230);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+
+label,
 input {
-  padding: 8px;
-  margin-bottom: 16px;
+    margin-bottom: 10px; /* Increase the margin between label and input */
 }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+ /* ... existing code ... */
 
 button {
-  background-color: #4CAF50;
+  background-color: #190303;
   color: white;
-  padding: 10px;
+  padding: 8px; /* Increased padding for better appearance */
+  font-size: 19px; /* Increased font size for the search button */
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
+  width: 150px; 
+  margin-left: 190px; 
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #ad1313;
 }
 
-#searchResults {
-  margin-top: 20px;
-}
+/* ... existing code ... */
+
+  #searchResults {
+    margin-top: 20px;
+  }

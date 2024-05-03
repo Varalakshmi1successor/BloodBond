@@ -1,5 +1,10 @@
+BLOODBOND WEBSITE PREVIEW:https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent/KtbxLwhGMLfDKTRvbfkPrhdThQqqkQtsFL?projector=1
+
+
 **BloodBond - Blood Donation Management System**
-              BloodBond is a web-based platform designed to facilitate the process of blood donation and blood recipient finding. This system aims to bridge the gap between blood donors and recipients by providing a user-friendly interface for registration, search, and communication.
+              
+              
+BloodBond is a web-based platform designed to facilitate the process of blood donation and blood recipient finding. This system aims to bridge the gap between blood donors and recipients by providing a user-friendly interface for registration, search, and communication.
 
 **Features**
 

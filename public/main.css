@@ -128,7 +128,7 @@ input {
   
  /* ... existing code ... */
 
-button {
+ button {
   background-color: #190303;
   color: white;
   padding: 8px; /* Increased padding for better appearance */
@@ -136,12 +136,27 @@ button {
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  width: 150px; 
-  margin-left: 190px; 
 }
 
 button:hover {
   background-color: #ad1313;
+}
+
+/* Additional styles for the "Request" button */
+button.request-button {
+  margin-right: 10px; /* Adjust spacing between buttons */
+}
+
+/* Additional styles for the "Call" button */
+button.call-button {
+  /* Add any additional styles specific to the "Call" button */
+}
+
+/* Container for action buttons */
+.action-buttons {
+  margin-top: 10px; 
+  display: flex;
+  justify-content: center;/* Adjust spacing between donor details and buttons */
 }
 
 /* ... existing code ... */

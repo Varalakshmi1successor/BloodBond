@@ -1,6 +1,12 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import User from './../models/user.js';
+import twilio from 'twilio';
+
+const accountSid = 'AC5640f6769e92e5adc8107d9d1c9ff1fc';
+const authToken = '76aead2e31533334f000bc3226ad2bd3';
+
+const client = twilio(accountSid, authToken);
 const router = express.Router();
 
 
@@ -200,6 +206,26 @@ router.post('/update-password/:token', async (req, res) => {
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'An error occurred while updating the password.' });
+    }
+});
+
+router.post("/request", async (req, res) => {
+    const { donorName, donorPhone, recipientName, recipientMobile, hospital } = req.body;
+
+    try {
+        // Logic to send SMS notification using Twilio
+        await client.messages.create({
+            body: `Hello ${donorName}, you have a blood request from ${recipientName} at ${hospital}. Please consider donating blood. Your immediate help could make a life-saving difference. Contact the recipient at ${recipientMobile} for more details. Thank you for your generosity and kindness.`,
+            from: +18722405443,
+            to: donorPhone
+        });
+
+        console.log(`Blood request from ${recipientName} (${recipientMobile}) at ${hospital} to ${donorName}.`);
+
+        return res.status(200).json({ success: true });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "An error occurred while processing the blood request." });
     }
 });
 

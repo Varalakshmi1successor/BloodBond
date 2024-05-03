@@ -8,6 +8,13 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'path';
 import User from './models/user.js';
+import twilio from 'twilio';
+
+const accountSid = 'AC5640f6769e92e5adc8107d9d1c9ff1fc';
+const authToken = '76aead2e31533334f000bc3226ad2bd3';
+const client = twilio(accountSid, authToken);
+
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

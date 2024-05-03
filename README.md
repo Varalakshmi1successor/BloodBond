@@ -1,4 +1,4 @@
-BLOODBOND WEBSITE PREVIEW:https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent/KtbxLwhGMLfDKTRvbfkPrhdThQqqkQtsFL?projector=1
+BLOODBOND WEBSITE PREVIEW:https://drive.google.com/file/d/1by9tkGS-TA5xigIhzrUISBlMwL0xkfLo/view?usp=sharing
 
 
 **BloodBond - Blood Donation Management System**
